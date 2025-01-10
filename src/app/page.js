@@ -20,6 +20,13 @@ export default function Home() {
           name="description"
           content="Enhance your winter construction projects with our advanced heating solutions."
         />
+        <meta property="og:title" content="Construction Heating Solutions" />
+        <meta
+          property="og:description"
+          content="Eco-friendly heating solutions for winter construction projects."
+        />
+        <meta property="og:image" content="/path-to-image.jpg" />
+        <meta property="og:url" content="https://yourwebsite.com" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -104,6 +111,7 @@ export default function Home() {
                 />
                 <button
                   className="text-white"
+                  aria-expanded={isMenuOpen ? "true" : "false"}
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
                 >
                   <svg

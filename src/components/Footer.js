@@ -49,7 +49,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="text-center md:text-left">
+          <div className="text-center md:-ml-24 ">
             <h3 className="text-xl font-semibold mb-4 sm:mb-6">Quick links</h3>
             <ul className="space-y-2">
               <li>
@@ -92,7 +92,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="text-center md:text-left">
+          <div className="text-center md:text-left md:-ml-24 ">
             <h3 className="text-xl font-semibold mb-4 sm:mb-6">Socials</h3>
             <div className="flex gap-3 mb-6 sm:mb-8 justify-center md:justify-start">
               <Link href="#" className="text-[#FF4001]">
@@ -123,7 +123,7 @@ const Footer = () => {
         </div>
         <br />
         <div className="border-t border-gray-500 pt-2 text-center font-bold">
-          <p>Copyright © Emergen Pvt Limited - 2025</p>
+          <p className="mt-3">Copyright © Emergen Pvt Limited - 2025</p>
         </div>
       </div>
     </footer>

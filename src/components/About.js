@@ -1,6 +1,17 @@
+import Head from "next/head";
+
 const About = () => {
   return (
-    <div className=" bg-[#424242] py-8 md:py-16">
+    <div className="bg-[#424242] py-8 md:py-16">
+      <Head>
+        <title>
+          E3000 Hydronic Heater - Ground Thawing and Concrete Curing
+        </title>
+        <meta
+          name="description"
+          content="The E3000 Hydronic Heater is designed for efficient ground thawing and concrete curing in cold weather conditions, ensuring smooth construction operations."
+        />
+      </Head>
       <div className="container mx-auto px-4 md:px-16">
         <div className="max-w-5xl">
           <h1 className="text-white text-3xl md:text-4xl font-bold mb-1">
@@ -8,9 +19,7 @@ const About = () => {
           </h1>
 
           <h2 className="text-[#FF4001] text-2xl md:text-5xl mb-4 md:mb-8 max-w-6xl leading-tight">
-            Unmatched Performance in Ground Thawing and
-           
-            Concrete Curing
+            Unmatched Performance in Ground Thawing and Concrete Curing
           </h2>
 
           <p className="text-white text-base md:text-lg font-normal leading-relaxed max-w-6xl">

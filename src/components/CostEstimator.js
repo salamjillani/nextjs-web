@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 
 const CostEstimator = () => {
@@ -94,101 +93,38 @@ const CostEstimator = () => {
 
         <div className="flex flex-col space-y-6 mb-8 md:mb-16 px-4 md:px-0">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 md:gap-x-24">
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between pb-6 border-b border-gray-500">
-              <span className="text-[#FF4001] text-lg font-bold mb-2 md:mb-0">
-                Delivery/Pickup
-              </span>
-              <div className="flex gap-4 w-full md:w-auto">
-                <button
-                  onClick={() => handleServiceToggle("delivery")}
-                  className={`flex-1 md:flex-none px-2 py-2 text-white ${
-                    !services.delivery ? "bg-[#373737] border border-white" : "bg-[#FF4001]"
-                  }`}
-                >
-                  No
-                </button>
-                <button
-                  onClick={() => handleServiceToggle("delivery")}
-                  className={`flex-1 md:flex-none px-2 py-2 text-white ${
-                    services.delivery ? "bg-[#373737] border border-white" : "bg-[#FF4001]"
-                  }`}
-                >
-                  Yes
-                </button>
+            {["delivery", "power", "insulation", "setup"].map((service) => (
+              <div
+                key={service}
+                className="flex flex-col md:flex-row items-start md:items-center justify-between pb-6 border-b border-gray-500"
+              >
+                <span className="text-[#FF4001] text-lg font-bold mb-2 md:mb-0">
+                  {service.charAt(0).toUpperCase() + service.slice(1)}
+                </span>
+                <div className="flex gap-4 w-full md:w-auto">
+                  <button
+                    onClick={() => handleServiceToggle(service)}
+                    className={`flex-1 md:flex-none px-2 py-2 text-white ${
+                      !services[service]
+                        ? "bg-[#373737] border border-white"
+                        : "bg-[#FF4001]"
+                    }`}
+                  >
+                    No
+                  </button>
+                  <button
+                    onClick={() => handleServiceToggle(service)}
+                    className={`flex-1 md:flex-none px-2 py-2 text-white ${
+                      services[service]
+                        ? "bg-[#373737] border border-white"
+                        : "bg-[#FF4001]"
+                    }`}
+                  >
+                    Yes
+                  </button>
+                </div>
               </div>
-            </div>
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between pb-6 border-b border-gray-500">
-              <span className="text-[#FF4001] text-lg font-bold mb-2 md:mb-0">
-                Power Availability
-              </span>
-              <div className="flex gap-4 w-full md:w-auto">
-                <button
-                  onClick={() => handleServiceToggle("power")}
-                  className={`flex-1 md:flex-none px-2 py-2 text-white ${
-                    !services.power ? "bg-[#373737] border border-white" : "bg-[#FF4001]"
-                  }`}
-                >
-                  No
-                </button>
-                <button
-                  onClick={() => handleServiceToggle("power")}
-                  className={`flex-1 md:flex-none px-2 py-2 text-white ${
-                    services.power ? "bg-[#373737] border border-white" : "bg-[#FF4001]"
-                  }`}
-                >
-                  Yes
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 md:gap-x-24">
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between pb-6 border-b border-gray-500">
-              <span className="text-[#FF4001] text-lg font-bold mb-2 md:mb-0">
-                Insulated Tarps
-              </span>
-              <div className="flex gap-4 w-full md:w-auto">
-                <button
-                  onClick={() => handleServiceToggle("insulation")}
-                  className={`flex-1 md:flex-none px-2 py-2 text-white ${
-                    !services.insulation ? "bg-[#373737] border border-white" : "bg-[#FF4001]"
-                  }`}
-                >
-                  No
-                </button>
-                <button
-                  onClick={() => handleServiceToggle("insulation")}
-                  className={`flex-1 md:flex-none px-2 py-2 text-white ${
-                    services.insulation ? "bg-[#373737] border border-white" : "bg-[#FF4001]"
-                  }`}
-                >
-                  Yes
-                </button>
-              </div>
-            </div>
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between pb-6 border-b border-gray-500">
-              <span className="text-[#FF4001] text-lg font-bold mb-2 md:mb-0">
-                Setup of the Ground Thaw Equipment
-              </span>
-              <div className="flex gap-4 w-full md:w-auto">
-                <button
-                  onClick={() => handleServiceToggle("setup")}
-                  className={`flex-1 md:flex-none px-2 py-2 text-white ${
-                    !services.setup ? "bg-[#373737] border border-white" : "bg-[#FF4001]"
-                  }`}
-                >
-                  No
-                </button>
-                <button
-                  onClick={() => handleServiceToggle("setup")}
-                  className={`flex-1 md:flex-none px-2 py-2 text-white ${
-                    services.setup ? "bg-[#373737] border border-white" : "bg-[#FF4001]"
-                  }`}
-                >
-                  Yes
-                </button>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 
