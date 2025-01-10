@@ -8,9 +8,7 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",],
   theme: {
     extend: {
-      fontFamily: {
-        inter: ['var(--font-inter)', 'sans-serif'], // Reference to the Inter font variable
-      },
+     
     },
   },
   plugins: [],
