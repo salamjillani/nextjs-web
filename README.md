@@ -1,4 +1,3 @@
-```markdown
 # Next.js Technical Assessment for the Frontend Engineer position at Emergen
 
 ## Project Description
