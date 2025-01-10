@@ -22,19 +22,27 @@ const CostEstimator = () => {
   };
 
   const calculateCost = () => {
-    if (!duration) return 0;
+    if (!duration || !frostDepth) {
+      alert("Please fill out all required fields.");
+      return;
+    }
+
     let cost = 575 * parseInt(duration);
     if (services.delivery) cost += 250;
     if (services.insulation) cost += 150;
     if (services.setup) cost += 300;
     if (!services.power) cost += 200;
+
     setTotalCost(cost);
   };
 
+  const handleInputChange = (setter) => (e) => {
+    const value = e.target.value;
+    if (!isNaN(value)) setter(value);
+  };
+
   return (
-    <div
-      className= "min-h-screen bg-[#373737] p-4 md:p-24 font-sans"
-    >
+    <div className="min-h-screen bg-[#373737] p-4 md:p-24 font-sans">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-white font-bold text-lg md:text-xl mb-0 px-4 md:px-0">
           Estimate Your Project Costs
@@ -58,6 +66,8 @@ const CostEstimator = () => {
               type="text"
               placeholder="30x60"
               className="w-full p-2 border-2 border-[#FF4001] focus:outline-none placeholder-black"
+              value={`${dimensions.length}x${dimensions.width}`}
+              readOnly
             />
           </div>
 
@@ -65,7 +75,7 @@ const CostEstimator = () => {
             <input
               type="text"
               value={frostDepth}
-              onChange={(e) => setFrostDepth(e.target.value)}
+              onChange={handleInputChange(setFrostDepth)}
               className="w-full p-2 bg-white placeholder-black"
               placeholder="Frost Depth (inches)"
             />
@@ -75,7 +85,7 @@ const CostEstimator = () => {
             <input
               type="text"
               value={duration}
-              onChange={(e) => setDuration(e.target.value)}
+              onChange={handleInputChange(setDuration)}
               className="w-full p-2 bg-white placeholder-black"
               placeholder="Duration (Days)"
             />
@@ -91,20 +101,16 @@ const CostEstimator = () => {
               <div className="flex gap-4 w-full md:w-auto">
                 <button
                   onClick={() => handleServiceToggle("delivery")}
-                  className={`flex-1 md:flex-none px-2 py-2 border border-white font-bold ${
-                    !services.delivery
-                      ? "text-white"
-                      : "bg-[#FF4001] text-white"
+                  className={`flex-1 md:flex-none px-2 py-2 text-white ${
+                    !services.delivery ? "bg-[#373737] border border-white" : "bg-[#FF4001]"
                   }`}
                 >
                   No
                 </button>
                 <button
                   onClick={() => handleServiceToggle("delivery")}
-                  className={`flex-1 md:flex-none px-2 py-2 ${
-                    services.delivery
-                      ? "bg-[#FF4001] text-white"
-                      : "bg-[#FF4001] text-white font-bold"
+                  className={`flex-1 md:flex-none px-2 py-2 text-white ${
+                    services.delivery ? "bg-[#373737] border border-white" : "bg-[#FF4001]"
                   }`}
                 >
                   Yes
@@ -118,18 +124,16 @@ const CostEstimator = () => {
               <div className="flex gap-4 w-full md:w-auto">
                 <button
                   onClick={() => handleServiceToggle("power")}
-                  className={`flex-1 md:flex-none px-2 py-2 border border-white font-bold ${
-                    !services.power ? "text-white" : "bg-[#FF4001] text-white"
+                  className={`flex-1 md:flex-none px-2 py-2 text-white ${
+                    !services.power ? "bg-[#373737] border border-white" : "bg-[#FF4001]"
                   }`}
                 >
                   No
                 </button>
                 <button
                   onClick={() => handleServiceToggle("power")}
-                  className={`flex-1 md:flex-none px-2 py-2 ${
-                    services.power
-                      ? "bg-[#FF4001] text-white"
-                      : "bg-[#FF4001] text-white font-bold"
+                  className={`flex-1 md:flex-none px-2 py-2 text-white ${
+                    services.power ? "bg-[#373737] border border-white" : "bg-[#FF4001]"
                   }`}
                 >
                   Yes
@@ -146,20 +150,16 @@ const CostEstimator = () => {
               <div className="flex gap-4 w-full md:w-auto">
                 <button
                   onClick={() => handleServiceToggle("insulation")}
-                  className={`flex-1 md:flex-none px-2 py-2 border border-white font-bold ${
-                    !services.insulation
-                      ? "text-white"
-                      : "bg-[#FF4001] text-white"
+                  className={`flex-1 md:flex-none px-2 py-2 text-white ${
+                    !services.insulation ? "bg-[#373737] border border-white" : "bg-[#FF4001]"
                   }`}
                 >
                   No
                 </button>
                 <button
                   onClick={() => handleServiceToggle("insulation")}
-                  className={`flex-1 md:flex-none px-2 py-2 ${
-                    services.insulation
-                      ? "bg-[#FF4001] text-white"
-                      : "bg-[#FF4001] text-white font-bold"
+                  className={`flex-1 md:flex-none px-2 py-2 text-white ${
+                    services.insulation ? "bg-[#373737] border border-white" : "bg-[#FF4001]"
                   }`}
                 >
                   Yes
@@ -173,18 +173,16 @@ const CostEstimator = () => {
               <div className="flex gap-4 w-full md:w-auto">
                 <button
                   onClick={() => handleServiceToggle("setup")}
-                  className={`flex-1 md:flex-none px-2 py-2 border border-white font-bold ${
-                    !services.setup ? "text-white" : "bg-[#FF4001] text-white"
+                  className={`flex-1 md:flex-none px-2 py-2 text-white ${
+                    !services.setup ? "bg-[#373737] border border-white" : "bg-[#FF4001]"
                   }`}
                 >
                   No
                 </button>
                 <button
                   onClick={() => handleServiceToggle("setup")}
-                  className={`flex-1 md:flex-none px-2 py-2 ${
-                    services.setup
-                      ? "bg-[#FF4001] text-white"
-                      : "bg-[#FF4001] text-white font-bold"
+                  className={`flex-1 md:flex-none px-2 py-2 text-white ${
+                    services.setup ? "bg-[#373737] border border-white" : "bg-[#FF4001]"
                   }`}
                 >
                   Yes
