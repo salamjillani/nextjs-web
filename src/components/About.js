@@ -8,10 +8,8 @@ const About = () => {
           </h1>
 
           <h2 className="text-[#FF4001] text-2xl md:text-5xl mb-4 md:mb-8 max-w-6xl leading-tight">
-            Unmatched Performance in Ground Thawing and{" "}
-            <span className="hidden md:inline">
-              <br />
-            </span>
+            Unmatched Performance in Ground Thawing and
+           
             Concrete Curing
           </h2>
 
