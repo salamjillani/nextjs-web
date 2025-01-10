@@ -1,12 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
-import { Inter } from "next/font/google";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
+import { useState } from "react";
 
 const CostEstimator = () => {
   const [dimensions, setDimensions] = useState({ length: 30, width: 60 });

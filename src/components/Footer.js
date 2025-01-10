@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import {
   Mail,
   Phone,
@@ -10,11 +9,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { FaLinkedin, FaFacebook } from "react-icons/fa";
-import { Inter } from "next/font/google";
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
+
 const Footer = () => {
   return (
     <footer className="bg-[#424242] text-white py-4 sm:py-8">

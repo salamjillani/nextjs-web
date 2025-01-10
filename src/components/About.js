@@ -1,8 +1,3 @@
-import React from "react";
-import { Inter } from "@next/font/google";
-
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-
 const About = () => {
   return (
     <div className={`${inter.variable} font-sans bg-[#424242] py-8 md:py-16`}>

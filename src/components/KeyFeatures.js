@@ -1,11 +1,5 @@
 "use client";
-import React from "react";
 import Image from "next/image";
-import { Inter } from "next/font/google";
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
 
 const KeyFeatures = () => {
   return (

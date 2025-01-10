@@ -2,16 +2,12 @@
 
 import Image from "next/image";
 import Head from "next/head";
-import { Inter } from "@next/font/google";
 import CostEstimator from "../components/CostEstimator";
 import About from "@/components/About";
 import KeyFeatures from "@/components/KeyFeatures";
 import ConstructionBanner from "@/components/ConstructionBanner";
 import Footer from "@/components/Footer";
 import { useState } from "react";
-
-
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,7 +30,6 @@ export default function Home() {
           backgroundPosition: "center",
           backgroundSize: "100% 100%",
           backgroundRepeat: "no-repeat",
-        
         }}
       >
         <div className="absolute inset-0 bg-black/20"></div>
