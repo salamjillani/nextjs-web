@@ -33,7 +33,7 @@ const CostEstimator = () => {
 
   return (
     <div
-      className={`${inter.variable} min-h-screen bg-[#373737] p-4 md:p-24 font-sans`}
+      className= "min-h-screen bg-[#373737] p-4 md:p-24 font-sans"
     >
       <div className="max-w-6xl mx-auto">
         <h2 className="text-white font-bold text-lg md:text-xl mb-0 px-4 md:px-0">

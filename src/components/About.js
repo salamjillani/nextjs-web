@@ -1,6 +1,6 @@
 const About = () => {
   return (
-    <div className={`${inter.variable} font-sans bg-[#424242] py-8 md:py-16`}>
+    <div className=" bg-[#424242] py-8 md:py-16">
       <div className="container mx-auto px-4 md:px-16">
         <div className="max-w-5xl">
           <h1 className="text-white text-3xl md:text-4xl font-bold mb-1">

@@ -13,7 +13,7 @@ export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className={`${inter.variable} font-sans`}>
+    <div>
       <Head>
         <title>Construction Heating Solutions</title>
         <meta
