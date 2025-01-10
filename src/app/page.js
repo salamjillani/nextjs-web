@@ -10,6 +10,7 @@ import ConstructionBanner from "@/components/ConstructionBanner";
 import Footer from "@/components/Footer";
 import { useState } from "react";
 
+
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export default function Home() {
@@ -33,10 +34,7 @@ export default function Home() {
           backgroundPosition: "center",
           backgroundSize: "100% 100%",
           backgroundRepeat: "no-repeat",
-          "@media (min-width: 768px)": {
-            backgroundSize: "cover",
-            backgroundPosition: "top center",
-          },
+        
         }}
       >
         <div className="absolute inset-0 bg-black/20"></div>
