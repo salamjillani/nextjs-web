@@ -44,14 +44,7 @@ export default function Home() {
         <header className="relative z-10">
           <nav className="container mx-auto">
             <div className="hidden md:flex md:justify-between md:items-center">
-              <div className="flex items-center ml-12">
-                <Image
-                  src="/logoWHITE.png"
-                  alt="Logo"
-                  width={120}
-                  height={50}
-                />
-              </div>
+             
 
               <div className="w-px h-20 bg-gray-500 -ml-48"></div>
 
