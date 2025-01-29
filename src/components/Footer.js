@@ -123,7 +123,7 @@ const Footer = () => {
         </div>
         <br />
         <div className="border-t border-gray-500 pt-2 text-center font-bold">
-          <p className="mt-3">Copyright © Emergen Pvt Limited - 2025</p>
+          <p className="mt-3">Copyright © Pvt Limited - 2025</p>
         </div>
       </div>
     </footer>
