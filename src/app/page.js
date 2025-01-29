@@ -101,14 +101,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="md:hidden">
-              <div className="flex justify-between items-center px-4 py-4">
-                <Image
-                  src="/logoWHITE.png"
-                  alt="Logo"
-                  width={120}
-                  height={50}
-                />
+          
                 <button
                   className="text-white"
                   aria-expanded={isMenuOpen ? "true" : "false"}
